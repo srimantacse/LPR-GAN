@@ -23,6 +23,8 @@ The network produces very good outcome :+1:
 
 ![Alt text](Sample_Output/sampleout.PNG?raw=true "LP Binarization over various lighting condition")
 
+# How to run
+Will be updated soon
 
 # External Link
 Will be updated soon
