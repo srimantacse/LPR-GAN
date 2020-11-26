@@ -17,3 +17,8 @@ Sample outcome of the experiments have been placed in the Sample_Output folder.
 1. DualDisBCD.py is the main GAN network file. 
 2. img_utils.py is the post processing file which is used over the model output.
 3. BCDUnetMultiScalePatchGAN.ipynb is the sample notebook file to train and test the network.
+
+# Sample Output
+The network produces very good outcome :+1:
+
+![Alt text](Sample_Output/sampleout.PNG?raw=true "LP Binarization over various lighting condition")
