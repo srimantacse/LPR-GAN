@@ -22,3 +22,10 @@ Sample outcome of the experiments have been placed in the Sample_Output folder.
 The network produces very good outcome :+1:
 
 ![Alt text](Sample_Output/sampleout.PNG?raw=true "LP Binarization over various lighting condition")
+
+
+# External Link
+Will be updated soon
+
+# Citation
+Will be updated soon
