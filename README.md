@@ -3,8 +3,11 @@ This is used for image binarization for mainly for Vehicle Number Plate. Beside 
 
 # Sample Output
 Sample outcome of the experiments have been placed in the Sample_Output folder.
-1. ANPR
-2. UFPR
-3. dibco17
-4. dibco18
-5. Palm Leaf
+A. ALPR (Binarization)
+	- ANPR: https://github.com/openalpr/benchmarks
+	- UFPR: https://web.inf.ufpr.br/vri/databases/ufpralpr/
+	- Media Lab: http://www.medialab.ntua.gr/research/LPRdatabase.html
+B. Document Binarization
+	- dibco17: https://vc.ee.duth.gr/dibco2017/
+	- dibco18: https://vc.ee.duth.gr/h-dibco2018/
+	- Palm Leaf: http://amadi.univ-lr.fr/ICFHR2016_Contest/index.php/download-123
