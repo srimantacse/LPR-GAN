@@ -99,29 +99,26 @@ def predict_output(patches):
 		output_patches.append(temp)
 	return output_patches
 
-# Palm Leaf With Output creation
-test_dir        = '/content/gdrive/MyDrive/Code/PalmLeaf/Test/'
-output_test_dir = '/content/gdrive/MyDrive/Code/PalmLeaf/Output_GT2/'
-model_path      = '/content/gdrive/MyDrive/Code/palm_leaf_gen_latest.h5'
+def nrm(y_true, y_pred):
+  mcm = multilabel_confusion_matrix(y_true, y_pred)
+  tn = mcm[:, 0, 0][0]
+  tp = mcm[:, 1, 1][0]
+  fn = mcm[:, 1, 0][0]
+  fp = mcm[:, 0, 1][0]
 
-model = models.load_model(model_path)
+  if fn +  tp == 0:
+    nr_fn = 0.0
+  else:
+    nr_fn   = fn.astype(float) / (fn +  tp)
 
-output_patches = []
-result         = []
-def predict(test_dir, output_test_dir):
-	for filename in sorted( os.listdir(test_dir)):	
-		img              = cv2.imread( os.path.join(test_dir, filename))
-		patches, h, w, c = get_patches(img)
-		output_patches   = predict_output(patches)
-		result           = concat_patches(output_patches, h, w, c)
-		img_out          = crop_to_original_size(img, result)
+  if fp  + tn == 0:
+    nr_fp = 0.0
+  else:
+    nr_fp = fp.astype(float) / (fp +  tn)
 
-		#cv2.imwrite( os.path.join(output_test_dir, filename[:-3]+"bmp"), img_out)  
-		#print(filename[:-3]+"bmp")
-	
-	return output_patches, img_out
+  nrm_val = (nr_fn + nr_fp) / 2.0
 
-output_patches, result = predict(test_dir, output_test_dir)
+  return nrm_val
 
 def my_psnr(output_patches, gt_patches):
   columns = len(output_patches[0])
@@ -153,27 +150,6 @@ def my_psnr(output_patches, gt_patches):
         c11 = 0
 
   return (psn/ count), (fsc/ count), (nrmVal/ count1)
-
-def nrm(y_true, y_pred):
-  mcm = multilabel_confusion_matrix(y_true, y_pred)
-  tn = mcm[:, 0, 0][0]
-  tp = mcm[:, 1, 1][0]
-  fn = mcm[:, 1, 0][0]
-  fp = mcm[:, 0, 1][0]
-
-  if fn +  tp == 0:
-    nr_fn = 0.0
-  else:
-    nr_fn   = fn.astype(float) / (fn +  tp)
-
-  if fp  + tn == 0:
-    nr_fp = 0.0
-  else:
-    nr_fp = fp.astype(float) / (fp +  tn)
-
-  nrm_val = (nr_fn + nr_fp) / 2.0
-
-  return nrm_val
 
 # Overall Test
 test_dir        = '/content/gdrive/MyDrive/Code/PalmLeaf/Test/'
