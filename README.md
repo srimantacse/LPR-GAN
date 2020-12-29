@@ -13,10 +13,7 @@ Sample outcome of the experiments have been placed in the Sample_Output folder.
    - Palm Leaf: http://amadi.univ-lr.fr/ICFHR2016_Contest/index.php/download-123
    
 # Code Description
-## Files will be updated soon
-1. DualDisBCD.py is the main GAN network file. 
-2. img_utils.py is the post processing file which is used over the model output.
-3. BCDUnetMultiScalePatchGAN.ipynb is the sample notebook file to train and test the network.
+1. BMDDNet.py is the main GAN network file. 
 
 # Sample Output
 The network produces very good outcome :+1:
@@ -24,10 +21,7 @@ The network produces very good outcome :+1:
 ![Alt text](Sample_Output/sampleout.PNG?raw=true "LP Binarization over various lighting condition")
 
 # How to run
-Will be updated soon
-
-# External Link
-Will be updated soon
+Use the BMDDNet class to train the generative network for producing the binarized License plate.
 
 # Citation
 Will be updated soon
