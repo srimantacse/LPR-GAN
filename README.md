@@ -18,7 +18,10 @@ Sample outcome of the experiments have been placed in the Sample_Output folder.
 # Sample Output
 The network produces very good outcome :+1:
 
+License Plate Segmentation from road side vehicle.
 ![Alt text](Sample_Output/sampleout.PNG?raw=true "LP Binarization over various lighting condition")
+
+DIBCO 17 document binarization sample.
 ![Alt text](Sample_Output/dibco17.PNG?raw=true "Document Binarization")
 
 # How to run
